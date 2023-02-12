@@ -1,7 +1,6 @@
 ---
 layout: post
 title: Expressive Assertions With ScalaTest
-readtime: true
 ---
 
 > This post assumes a basic familiarity with the [ScalaTest](https://www.scalatest.org/) testing framework as well as the Scala programming language.
