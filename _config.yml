@@ -1,8 +1,8 @@
 # Setup
-title:               F[Abulous]
-tagline:             'Scala Programming Blogs'
-description:         Programming articles mainly about Scala, Cats, Web-Programming, or anything else I happen to feel like writing about.
-url:                 ''
+title:               'F[Abulous]'
+tagline:             "Adam's Tech Blog"
+description:         'A thought dumping ground.'
+url:                 https://adamjking.github.io
 baseurl:             ''
 paginate:            5
 permalink:           pretty
@@ -10,10 +10,11 @@ permalink:           pretty
 # About/contact
 author:
   name:              Adam King
+  url: abc
+  email:             adamjking1995@outlook.com
 
 # Gems
 plugins:
   - jekyll-paginate
 
-# Custom vars
-version:             1.1.0
+version: 1
