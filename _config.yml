@@ -1,17 +1,17 @@
 # Setup
-title:               'F[Abulous]'
-tagline:             "Adam's Tech Blog"
-description:         'A thought dumping ground.'
-url:                 https://adamjking.github.io
-baseurl:             ''
-paginate:            5
-permalink:           pretty
+title: "F[Abulous]"
+tagline: "Adam's Tech Blog"
+description: "A thought dumping ground."
+url: https://adamjking.github.io
+baseurl: https://adamjking.github.io/fabulous-blog
+paginate: 5
+permalink: pretty
 
 # About/contact
 author:
-  name:              Adam King
+  name: Adam King
   url: abc
-  email:             adamjking1995@outlook.com
+  email: adamjking1995@outlook.com
 
 # Gems
 plugins:
