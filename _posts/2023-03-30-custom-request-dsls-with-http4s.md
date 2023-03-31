@@ -35,7 +35,7 @@ HttpRoutes.of[IO] {
 }
 ```
 
-To understand how we might add this we need to explore how Http4s cleverly uses Scala's pattern match system. When we pattern match on a case class the Scala method is actually invoking a method called `unapply` to decide if the given value “matches”. Typically, that method might look something like this.
+To understand how we might add this we need to explore how Http4s cleverly uses Scala's pattern match system. When we pattern match on a case class Scala is actually invoking a method called `unapply` to decide if the given value “matches”. Typically, that method might look something like this.
 
 ```scala
 object Foo {
@@ -66,7 +66,7 @@ object -> {
 ```
 {% endraw %}
 
-This is the first component of a Http4s route. The input is the inbound request itself. The output is two chunks that have been split from the request; the method and the path. Through the same syntax as `::` we saw earlier the Scala can match the request as with method on the left, and path on the right. Scala allows us to match against specific values, so we can further refine our match with an exact method. The path however is then fed to another `Path` matcher which decomposes the `Path` value further.
+This is the first component of a Http4s route. The input is the inbound request itself. The output is two chunks that have been split from the request; the method and the path. Through the same syntax as `::` we saw earlier, Scala can match the request as a method on the left and a path on the right. Scala also allows us to match against specific values, so we can further refine our match with an exact method. The path however is then fed to another `Path` matcher which decomposes the value further.
 
 ```scala
 object / {
