@@ -9,4 +9,8 @@ This is an example of how simple our application test can be.
 
 <script src="https://emgithub.com/embed-v2.js?target=https%3A%2F%2Fgithub.com%2FAdamJKing%2Fblackbox-testing-sample%2Fblob%2Feed9b2a6bef9fa2049c9be1908415ee43c3a9347%2Fintegration-tests%2Fsrc%2Ftest%2Fscala%2Fblackbox%2Ftesting%2Fsample%2FAppSpec.scala%23L19-L34&style=a11y-light&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on"></script>
 
+### Test Containers
+
 For this approach we'll be using [test-containers](https://github.com/testcontainers/testcontainers-scala) which provides a Docker context and native integrations for a variety of test frameworks. This framework is quite powerful by itself but one of the most useful features is the ability to run Docker compositions directly. 
+
+## 

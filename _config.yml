@@ -3,7 +3,7 @@ title: "F[Abulous]"
 tagline: "Adam's Tech Blog"
 description: "A thought dumping ground."
 url: https://adamjking.github.io
-baseurl: fabulous-blog
+baseurl: /fabulous-blog
 paginate: 5
 permalink: pretty
 
