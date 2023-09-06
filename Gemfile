@@ -1,3 +1,3 @@
 source "https://rubygems.org"
-gem 'jekyll', github: 'jekyll/jekyll'
+gem 'github-pages', group: :jekyll_plugins
 gem 'jekyll-whiteglass', '~> 1.11', '>= 1.11.3'
