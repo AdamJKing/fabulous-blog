@@ -16,3 +16,5 @@ jekyll-archives:
   permalinks:
     category: /categories/:name/
     tag: /tags/:name/
+
+repository: AdamJKing/fabulous-blog
