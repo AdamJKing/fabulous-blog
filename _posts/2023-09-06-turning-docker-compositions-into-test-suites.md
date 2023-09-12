@@ -14,7 +14,7 @@ infrastructure locally. A common use-case is providing local versions of depende
 more realistic feedback loop when developing applications.
 
 Similarly, in “black-box” tests (think integration, or acceptance tests) the aim is to validate the application's
-behaviour without changing how it works internally . Often you'll see code-bases setting up these dependencies in a way
+behaviour without changing how it works internally. Often you'll see code-bases setting up these dependencies in a way
 that results in messy or error-prone code. These are exactly the same problems that Docker, and Docker composition, help
 solve.
 
@@ -43,7 +43,7 @@ need without having to change our tests at all. In order to start using this in 
 Docker relies on our application being available as an image before we can use it in a suite. Unfortunately
 docker-compose does not have a concept of running external build tasks to acquire an image. That being said most build
 tools will allow us to build an image before running our test suite. With SBT and the native-packager plugin it's as
-simple as adding our Docker build stage as a pre-requisite for our integration tests.
+simple as adding our Docker build stage as a prerequisite for our integration tests.
 
 > An SBT quirk means we need to specify our Docker build step for every test task.
 
@@ -56,16 +56,16 @@ simple as adding our Docker build stage as a pre-requisite for our integration t
 ### 2. Integrate our composition setup into our test-suite.
 
 The next step is to wire in the details of our image into our tests. The test-containers library has integrations for a
-variety of test frameworks, which makes this easier, but we'll still need to do a little bit of wiring. The
-docker-compose module needs to know the location of our compose-file. It might be tempting to hard-code this but that
+variety of test frameworks, which makes this easier, but we'll still need to do a little wiring. The
+docker-compose module needs to know the location of our compose-file. It might be tempting to hard-code this, but that
 will affect the portability of your tests. Instead, it's better to pass this in as a property and use SBT to figure out
 where the compose file is. This has the added benefit of being able to test against multiple compose-files
 which is useful if we wanted to run our tests against different environments.
 
-<script src="https://emgithub.com/embed-v2.js?target=https%3A%2F%2Fgithub.com%2FAdamJKing%2Fblackbox-testing-sample%2Fblob%2F388fe4e99956353c83e99f38f60a1c90f903c3fc%2Fintegration-tests%2Fsrc%2Ftest%2Fscala%2Fblackbox%2Ftesting%2Fsample%2FAppFixture.scala%23L34-L36&style=a11y-light&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on"></script>
+<script src="https://emgithub.com/embed-v2.js?target=https%3A%2F%2Fgithub.com%2FAdamJKing%2Fblackbox-testing-sample%2Fblob%2F388fe4e99956353c83e99f38f60a1c90f903c3fc%2Fbuild.sbt%23L39&style=a11y-light&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on"></script>
 
 The caveat here is that if you prefer to use an IDE to run test-suites you may need to update the respective run config
-before this will work. In IntelliJ you just need to edit the run configuration, which you can share by saving in your
+before this will work. In IntelliJ, you just need to edit the run configuration which you can share by saving in your
 project repo.
 
 ![IntelliJ Run Configuration](/assets/images/IntelliJRunConfig.png)
@@ -80,13 +80,13 @@ The last bit of wiring we need to do is instructing test-containers on how to us
 <script src="https://emgithub.com/embed-v2.js?target=https%3A%2F%2Fgithub.com%2FAdamJKing%2Fblackbox-testing-sample%2Fblob%2Fabed609fdbe0c4a17dfedebf7005bbc89eead893%2Fintegration-tests%2Fsrc%2Ftest%2Fscala%2Fblackbox%2Ftesting%2Fsample%2FAppFixture.scala%23L39-L47&style=a11y-light&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on"></script>
 
 There's two key extra bits of information here. The first is that we tell test-containers at which point it should
-consider the composition ready for testing. In this case I have added a wait condition for the service's healthcheck.
-There's a large number of approaches you can take here and if your setup is more complex it's worth checking out
+consider the composition ready for testing. In this case I have added a wait condition for the service's health-check.
+There are many approaches you can take here and if your setup is more complex it's worth checking out
 the [test-containers documentation](https://java.testcontainers.org/features/startup_and_waits/#:~:text=not%20a%20daemon.-,Wait%20Strategies,container%20is%20ready%20for%20use).
 
 Secondly we specify which container's logs we would like to follow. I have kept it simple by only following the main
 container as this can become overwhelmingly quickly with multiple containers. It is possible to implement more
-complicated logging solutions but if your containers are logging too much, it's best to try and configure logging
+complicated logging solutions but if your containers are logging too much, it's best to try to configure logging
 through the application itself.
 
 ### 3. Create a client which is capable of calling our application.
