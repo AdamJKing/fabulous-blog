@@ -3,8 +3,7 @@ title: Turning Docker Compositions into Test Suites
 layout: post
 ---
 
-> Prerequisites; knowing and using Docker is a must-have to get the most out of this technique. I'll be using ScalaTest,
-> but there are wrappers for other libraries too.
+> Knowing and using Docker is a must-have to get the most out of this technique. I'll be using ScalaTest but there are wrappers for other libraries too.
 
 The code for this blog can be found [here](https://github.com/AdamJKing/blackbox-testing-sample).
 

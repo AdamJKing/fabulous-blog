@@ -1,3 +1,4 @@
+title: 'F[abulous] Blog'
 theme: jekyll-whiteglass
 plugins:
   - jekyll-archives

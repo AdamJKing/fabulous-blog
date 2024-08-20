@@ -5,8 +5,6 @@ created: 2023-03-14T19:51:58+00:00
 modified: 2023-03-20T21:20:26+00:00
 ---
 
-> Perquisites:
->
 > This post focuses on Http4s but as the techniques are entirely native to Scala, so really only familiarity with Scala pattern matching is a must-have.
 
 I've recently been playing around with Http4s' routing DSL and adding some custom routing mechanics of my own. Sometimes we want to access request information generically in a way that isn't strictly relevant to the route's normal purpose. A great example of this is Http4s' `AuthedRoutes`.
